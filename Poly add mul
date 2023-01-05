@@ -1,0 +1,18 @@
+133 }
+134 struct poly * poly_multiply(struct poly *p1,struct poly *p2)
+135 {
+136 struct poly *p,*p4=NULL,*poly_new=NULL;
+137 while(p2!=NULL)
+138 {
+139 p=p1;
+140 poly_new=NULL;
+141 while(p!=NULL)
+142 {
+143 poly_new=insert_add(poly_new,p->co*p2->co,p->ex+p2->ex);
+144 p=p->next;
+145 }
+146 p4=poly_add(p4,poly_new);
+147 p2=p2->next;
+148 }
+149 return p4;
+150 }
